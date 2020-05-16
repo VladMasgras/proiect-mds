@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("1.Adauga tren");
         arrayList.add("2.Rezerva bilet");
         arrayList.add("3.Adauga vagoane");
-        /*arrayList.add("3.Adauga doctor");
-        arrayList.add("4.Sterge doctor");
+        arrayList.add("4.Login");
+        /*arrayList.add("4.Sterge doctor");
         arrayList.add("5.Afiseaza pacientii");
         arrayList.add("6.Afiseaza pacientii copii");
         arrayList.add("7.Afiseaza pacientii adulti");
@@ -56,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (position == 2){
                     Intent intent = new Intent(MainActivity.this, AdaugaVagoane.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, Login.class);
                     startActivity(intent);
                 }
 
