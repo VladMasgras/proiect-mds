@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login"></activity>
+        <activity android:name=".AlegeCursa"></activity>
+        <activity android:name=".Inregistrare" />
+        <activity android:name=".Login" />
         <activity android:name=".AdaugaVagoane" />
-        <activity android:name=".AdaugaVagon" />
         <activity android:name=".RezervaBilet" />
         <activity android:name=".AdaugaTren" />
         <activity android:name=".MainActivity">

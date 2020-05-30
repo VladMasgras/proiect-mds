@@ -1,11 +1,25 @@
 package com.example.proiect;
 
-public class Tren {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Tren implements Parcelable {
     private int serie,distanta;
     private String statiePlecare,oraPlecare,statieSosire,oraSosire;
 
     public Tren(){
 
+    }
+
+    public Tren(Tren tren){
+        this.serie = tren.serie;
+        this.distanta = tren.distanta;
+        this.statiePlecare = tren.statiePlecare;
+        this.oraPlecare = tren.oraPlecare;
+        this.statieSosire = tren.statieSosire;
+        this.oraSosire = tren.oraSosire;
     }
 
     public Tren(int serie, int distanta, String statiePlecare, String oraPlecare, String statieSosire, String oraSosire) {
@@ -17,6 +31,27 @@ public class Tren {
         this.oraSosire = oraSosire;
     }
 
+
+    protected Tren(Parcel in) {
+        serie = in.readInt();
+        distanta = in.readInt();
+        statiePlecare = in.readString();
+        oraPlecare = in.readString();
+        statieSosire = in.readString();
+        oraSosire = in.readString();
+    }
+
+    public static final Creator<Tren> CREATOR = new Creator<Tren>() {
+        @Override
+        public Tren createFromParcel(Parcel in) {
+            return new Tren(in);
+        }
+
+        @Override
+        public Tren[] newArray(int size) {
+            return new Tren[size];
+        }
+    };
 
     public int getSerie() {
         return serie;
@@ -69,5 +104,20 @@ public class Tren {
     @Override
     public String toString(){
         return statiePlecare + " " + statieSosire;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(serie);
+        parcel.writeInt(distanta);
+        parcel.writeString(statiePlecare);
+        parcel.writeString(oraPlecare);
+        parcel.writeString(statieSosire);
+        parcel.writeString(oraSosire);
     }
 }

@@ -3,7 +3,9 @@ package com.example.proiect;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -65,6 +67,8 @@ public class RezervaBilet extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent intent = new Intent(RezervaBilet.this, AlegeCursa.class);
                 String orasPlecare = orasPlecareText.getText().toString();
                 String orasDestinatie = orasDestinatieText.getText().toString();
                 List<Tren> queryTren = new ArrayList<Tren>();
@@ -78,7 +82,8 @@ public class RezervaBilet extends AppCompatActivity {
                                 }
                             }
                 Log.d("queryTren",""+ queryTren);
-
+                intent.putParcelableArrayListExtra("arrayTrenuri", (ArrayList<? extends Parcelable>) queryTren);
+                startActivity(intent);
             }
         });
     }

@@ -33,7 +33,6 @@ public class AdaugaVagoane extends AppCompatActivity {
 
                 DatabaseReference refVagoane = FirebaseDatabase.getInstance().getReference().child("vagoane");
 
-
                 for (int i = 0; i < nrVagoane; i++) {
 
                     Vagon vagon = new Vagon(clasa, nrLocuri);
