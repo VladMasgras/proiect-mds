@@ -2,6 +2,7 @@ package com.example.proiect;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,12 +33,18 @@ public class AdaugaVagoane extends AppCompatActivity {
                 int clasa = Integer.parseInt(clasaText.getText().toString());
 
                 DatabaseReference refVagoane = FirebaseDatabase.getInstance().getReference().child("vagoane");
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("locuri");
 
                 for (int i = 0; i < nrVagoane; i++) {
 
-                    Vagon vagon = new Vagon(clasa, nrLocuri);
-                    refVagoane.child("" + serie).push().setValue(vagon);
-
+                    Vagon vagon = new Vagon(clasa, nrLocuri, i + 1, false);
+                    String key = refVagoane.child("" + serie).push().getKey();
+                    refVagoane.child("" + serie).child(key).setValue(vagon);
+                    for (int j = 0; j < nrLocuri; j++) {
+                        Loc loc = new Loc(j+1);
+                        Log.d("loc", "" + loc);
+                        ref.child("" + key).push().setValue(loc);
+                    }
                 }
                 serieText.getText().clear();
                 nrLocuriText.getText().clear();

@@ -13,6 +13,8 @@ import androidx.annotation.Nullable;
 
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +42,12 @@ public class TrenuriAdapter extends ArrayAdapter<Tren> {
 
         TextView release = (TextView) listItem.findViewById(R.id.textView_destinatie);
         release.setText(currentTren.getStatieSosire());
+
+        TextView oraPlecare = (TextView) listItem.findViewById(R.id.oraplecare);
+        oraPlecare.setText(currentTren.getOraPlecare());
+
+        TextView oraSosire = (TextView) listItem.findViewById(R.id.orasosire);
+        oraSosire.setText(currentTren.getOraSosire());
 
         return listItem;
     }

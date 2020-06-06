@@ -6,6 +6,7 @@ import android.os.Parcelable;
 import java.io.Serializable;
 
 public class Tren implements Parcelable {
+
     private int serie,distanta;
     private String statiePlecare,oraPlecare,statieSosire,oraSosire;
 

@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("2.Rezerva bilet");
         arrayList.add("3.Adauga vagoane");
         arrayList.add("4.Login");
+        arrayList.add("5.vezi bilete");
         /*arrayList.add("4.Sterge doctor");
         arrayList.add("5.Afiseaza pacientii");
         arrayList.add("6.Afiseaza pacientii copii");
@@ -58,8 +59,12 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, AdaugaVagoane.class);
                     startActivity(intent);
                 }
-                else {
+                else if (position == 3){
                     Intent intent = new Intent(MainActivity.this, Login.class);
+                    startActivity(intent);
+                }
+                else{
+                    Intent intent = new Intent(MainActivity.this, VeziBileteRezervate.class);
                     startActivity(intent);
                 }
 

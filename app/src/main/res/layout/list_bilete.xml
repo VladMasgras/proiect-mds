@@ -38,6 +38,49 @@
         android:layout_toEndOf="@id/textView_destinatie"
         android:layout_below="@id/oraplecare"/>
 
+    <TextView
+        android:id="@+id/vagon_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:layout_toEndOf="@id/oraplecare"
+        />
+
+    <TextView
+        android:id="@+id/vagon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:layout_toEndOf="@id/vagon_edit" />
+
+
+    <TextView
+        android:id="@+id/loc_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:layout_toEndOf="@id/orasosire"
+        android:layout_below="@id/vagon_edit"
+        />
+
+
+    <TextView
+        android:id="@+id/loc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:layout_toEndOf="@id/loc_edit"
+        android:layout_below="@id/vagon"
+        />
+
+
+
+
+
 
 
 </RelativeLayout>
