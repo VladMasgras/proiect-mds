@@ -28,6 +28,7 @@ public class Login extends AppCompatActivity {
     private TextInputLayout emailText, parolaText;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
+    boolean ok = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,14 +70,17 @@ public class Login extends AppCompatActivity {
                                     for (DataSnapshot adminSnapshot: dataSnapshot.getChildren()){
                                         Log.d("useradmin", "" + adminSnapshot.getValue());
                                         if (user.getUid().equals("" + adminSnapshot.getValue())) {
-                                            Intent intent = new Intent(Login.this, MainActivity.class);
+                                            Intent intent = new Intent(Login.this, MeniuAdmin.class);
                                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                                             startActivity(intent);
+                                            ok = true;
                                         }
                                     }
-                                    Intent intent = new Intent(Login.this, RezervaBilet.class);
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    startActivity(intent);
+                                    if (! ok) {
+                                        Intent intent = new Intent(Login.this, RezervaBilet.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        startActivity(intent);
+                                    }
                                 }
 
                                 @Override
