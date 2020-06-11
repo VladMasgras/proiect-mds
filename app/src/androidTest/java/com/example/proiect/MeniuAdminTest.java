@@ -22,8 +22,8 @@ public class MeniuAdminTest {
     public ActivityTestRule<MeniuAdmin> meniuAdminActivityTestRule = new ActivityTestRule<MeniuAdmin>(MeniuAdmin.class);
 
     private MeniuAdmin meniuAdmin = null;
-    Instrumentation.ActivityMonitor monitorVag = getInstrumentation().addMonitor(AdaugaVagoane.class.getName(), null, false);
-    Instrumentation.ActivityMonitor monitorTren = getInstrumentation().addMonitor(AdaugaTren.class.getName(), null, false);
+    private Instrumentation.ActivityMonitor monitorVag = getInstrumentation().addMonitor(AdaugaVagoane.class.getName(), null, false);
+    private Instrumentation.ActivityMonitor monitorTren = getInstrumentation().addMonitor(AdaugaTren.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception {
