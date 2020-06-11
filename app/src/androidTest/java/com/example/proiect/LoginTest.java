@@ -41,6 +41,7 @@ public class LoginTest {
         assertNotNull(pass);
     }
 
+    @Test
     public void testLogin(){
         View email = loginActivity.findViewById(R.id.text_input_email_login);
         View pass = loginActivity.findViewById(R.id.text_input_password_login);
@@ -48,8 +49,10 @@ public class LoginTest {
         String mailInput = "andrei@gmail.com";
         String passInput = "123456";
 
-        Espresso.onView(withId(R.id.text_input_email_login)).perform(typeText(mailInput));
-        Espresso.onView(withId(R.id.text_input_password_login)).perform(typeText(passInput));
+        Espresso.onView(withId(R.id.email_login)).perform(typeText(mailInput));
+        Espresso.closeSoftKeyboard();
+        Espresso.onView(withId(R.id.pass_login)).perform(typeText(passInput));
+        Espresso.closeSoftKeyboard();
 
         Espresso.onView(withId(R.id.email_sign_in_button)).perform(click());
         Activity meniuAdmin = getInstrumentation().waitForMonitorWithTimeout(monitorAdmin, 5000);
