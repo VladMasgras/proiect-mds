@@ -14,17 +14,17 @@
         <activity android:name=".VeziBileteRezervate" />
         <activity android:name=".AlegeCursa" />
         <activity android:name=".Inregistrare" />
-        <activity android:name=".Login" />
-        <activity android:name=".AdaugaVagoane" />
-        <activity android:name=".RezervaBilet" />
-        <activity android:name=".AdaugaTren" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AdaugaVagoane" />
+        <activity android:name=".RezervaBilet" />
+        <activity android:name=".AdaugaTren" />
+        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>
