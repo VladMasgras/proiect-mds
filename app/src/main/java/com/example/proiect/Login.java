@@ -77,7 +77,7 @@ public class Login extends AppCompatActivity {
                                         }
                                     }
                                     if (! ok) {
-                                        Intent intent = new Intent(Login.this, RezervaBilet.class);
+                                        Intent intent = new Intent(Login.this, MeniuUtilizator.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
                                     }
