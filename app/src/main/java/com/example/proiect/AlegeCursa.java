@@ -138,6 +138,7 @@ public class AlegeCursa extends AppCompatActivity {
                                         locuri.add(loc);
 
                                     }
+                                    checkLoc();
                                 }
 
                                 @Override
@@ -154,6 +155,7 @@ public class AlegeCursa extends AppCompatActivity {
                             if ((Boolean)dsp.child("ocupat").getValue() == false)
                                 break;
                         }
+
                     }
 
                     @Override
@@ -163,10 +165,6 @@ public class AlegeCursa extends AppCompatActivity {
                 });
 
                 System.out.println(vagoane);
-                if (succes == false)
-                    Toast.makeText(getApplicationContext(), "Nu mai sunt locuri", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(getApplicationContext(), "Loc rezervat cu succes", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -182,5 +180,11 @@ public class AlegeCursa extends AppCompatActivity {
             }
         }
         Log.d("queryTren",""+ queryTren);*/
+    }
+    void checkLoc(){
+        if (succes == false)
+            Toast.makeText(getApplicationContext(), "Nu mai sunt locuri", Toast.LENGTH_SHORT).show();
+        else
+            Toast.makeText(getApplicationContext(), "Loc rezervat cu succes", Toast.LENGTH_SHORT).show();
     }
 }
